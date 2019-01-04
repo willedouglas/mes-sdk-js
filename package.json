@@ -1,0 +1,25 @@
+{
+  "name": "mes-sdk-js",
+  "version": "1.0.8",
+  "description": "Javascript Software Development Kit for MES Application used to manage the semi-open prison regime.",
+  "author": "Solucionou Enterprises",
+  "homepage": "http://solucionou.com.br/",
+  "copyright": "Copyright 2018 Solucionou",
+  "license": "Apache-2.0",
+  "private": false,
+  "contributors": [
+    "Douglas Wille <willedouglas10@gmail.com>"
+  ],
+  "scripts": {
+    "lint": "eslint --fix --ext .jsx,.js ."
+  },
+  "dependencies": {
+    "axios": "0.16.2",
+    "co": "4.6.0",
+    "qs": "6.5.1"
+  },
+  "devDependencies": {
+    "eslint": "4.9.0",
+    "express": "4.16.2"
+  }
+}
