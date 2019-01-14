@@ -10,7 +10,6 @@ const Rules = require("./rules.js");
 const Districts = require("./districts.js");
 const Garrisons = require("./garrisons.js");
 const Zones = require("./zones.js");
-const Vehicles = require("./vehicles.js");
 const Users = require("./users.js");
 
 class Account {
@@ -68,10 +67,6 @@ class Account {
 
 	get zones() {
 		return new Zones(this.token);
-	}
-
-	get vehicles() {
-		return new Vehicles(this.token);
 	}
 
 	get users() {
