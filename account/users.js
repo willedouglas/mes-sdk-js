@@ -44,7 +44,6 @@ class Users {
 		const options = Object.assign({}, this.default_options, { url, method, data });
 		return request(options);
 	}
-
 }
 
 module.exports = Users;

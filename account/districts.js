@@ -18,6 +18,32 @@ class Districts {
 		const options = Object.assign({}, this.default_options, { url, method });
 		return request(options);
 	}
+
+	getDistrict(id) {
+		const url = `${config.api_url}/districts/${id}`;
+		const method = "GET";
+
+		const options = Object.assign({}, this.default_options, { url, method });
+		return request(options);
+	}
+
+	createDistrict(data) {
+		const url = `${config.api_url}/districts/`;
+		data = data || {};
+		const method = "POST";
+
+		const options = Object.assign({}, this.default_options, { url, method, data });
+		return request(options);
+	}
+
+	editDistrict(district_id, data) {
+		const url = `${config.api_url}/districts/${district_id}`;
+		data = data || {};
+		const method = "PUT";
+
+		const options = Object.assign({}, this.default_options, { url, method, data });
+		return request(options);
+	}
 }
 
 module.exports = Districts;

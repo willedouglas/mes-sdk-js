@@ -18,6 +18,32 @@ class Prisioners {
 		const options = Object.assign({}, this.default_options, { url, method });
 		return request(options);
 	}
+
+	getPrisioner(id) {
+		const url = `${config.api_url}/prisioners/${id}`;
+		const method = "GET";
+
+		const options = Object.assign({}, this.default_options, { url, method });
+		return request(options);
+	}
+
+	createPrisioner(data) {
+		const url = `${config.api_url}/prisioners/`;
+		data = data || {};
+		const method = "POST";
+
+		const options = Object.assign({}, this.default_options, { url, method, data });
+		return request(options);
+	}
+
+	editPrisioner(prisioner_id, data) {
+		const url = `${config.api_url}/prisioners/${prisioner_id}`;
+		data = data || {};
+		const method = "PUT";
+
+		const options = Object.assign({}, this.default_options, { url, method, data });
+		return request(options);
+	}
 }
 
 module.exports = Prisioners;
