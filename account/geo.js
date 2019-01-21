@@ -18,17 +18,17 @@ class Geo {
 		const options = Object.assign({}, this.default_options, { url, method });
 		return request(options);
 	}
-  
-	getCitiesByState(state_id) {
-		const url = `${config.api_url}/states/${state_id}/cities`;
+
+	getCities() {
+		const url = `${config.api_url}/cities`;
 		const method = "GET";
 
 		const options = Object.assign({}, this.default_options, { url, method });
 		return request(options);
 	}
-
-	getCities() {
-		const url = `${config.api_url}/cities`;
+  
+	getCitiesByState(state_id) {
+		const url = `${config.api_url}/states/${state_id}/cities`;
 		const method = "GET";
 
 		const options = Object.assign({}, this.default_options, { url, method });
