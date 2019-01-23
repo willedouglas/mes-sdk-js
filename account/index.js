@@ -5,6 +5,7 @@ const default_headers = require("../comum/default_headers.js");
 const request = require("../comum/request.js");
 
 const Prisioners = require("./prisioners.js");
+const Factions = require("./factions.js");
 const Visits = require("./visits.js");
 const Rules = require("./rules.js");
 const Districts = require("./districts.js");
@@ -48,6 +49,10 @@ class Account {
 
 	get prisioners() {
 		return new Prisioners(this.token);
+	}
+
+	get factions() {
+		return new Factions(this.token);
 	}
 
 	get visits() {
