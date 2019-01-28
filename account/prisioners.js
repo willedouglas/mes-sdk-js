@@ -27,6 +27,22 @@ class Prisioners {
 		return request(options);
 	}
 
+	getPrisionerVisits(id) {
+		const url = `${config.api_url}/prisioners/${id}/visits`;
+		const method = "GET";
+
+		const options = Object.assign({}, this.default_options, { url, method });
+		return request(options);
+	}
+
+	getPrisionerRules(id) {
+		const url = `${config.api_url}/prisioners/${id}/rules`;
+		const method = "GET";
+
+		const options = Object.assign({}, this.default_options, { url, method });
+		return request(options);
+	}
+
 	createPrisioner(data) {
 		const url = `${config.api_url}/prisioners/`;
 		data = data || {};
