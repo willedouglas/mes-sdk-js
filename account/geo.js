@@ -34,6 +34,14 @@ class Geo {
 		const options = Object.assign({}, this.default_options, { url, method });
 		return request(options);
 	}
+
+	getAddressInfo(key, address) {
+		const url = `${config.geo_url}/geocode/v1/json?q=${address}&key=${key}`;
+		const method = "GET";
+
+		const options = Object.assign({}, this.default_options, { url, method });
+		return request(options);
+	}
 }
 
 module.exports = Geo;
