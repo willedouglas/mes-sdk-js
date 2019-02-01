@@ -36,10 +36,10 @@ class Geo {
 	}
 
 	getAddressInfo(key, address) {
-		const url = `${config.geo_url}/geocode/v1/json?q=${address}&key=${key}`;
+		const url = `${config.geo_url}/geocoding/v1/address?key=${key}&location=${address}`;
 		const method = "GET";
 
-		const options = Object.assign({}, this.default_options, { url, method });
+		const options = Object.assign({}, {}, { url, method });
 		return request(options);
 	}
 }
