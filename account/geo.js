@@ -36,7 +36,7 @@ class Geo {
 	}
 
 	getAddressInfo(key, address) {
-		const url = `${config.geo_url}/geocoding/v1/address?key=${key}&location=${address}`;
+		const url = `${config.geo_url}/maps/api/geocode/json?address=${address}&key=${key}`;
 		const method = "GET";
 
 		const options = Object.assign({}, {}, { url, method });
