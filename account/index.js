@@ -4,6 +4,7 @@ const config = require("../config.js");
 const default_headers = require("../comum/default_headers.js");
 const request = require("../comum/request.js");
 
+const Dashboard = require("./dashboard.js");
 const Prisioners = require("./prisioners.js");
 const Occurences = require("./occurences.js");
 const Factions = require("./factions.js");
@@ -46,6 +47,10 @@ class Account {
 		const options = Object.assign({}, this.default_options, { url, method });
 
 		return request(options);
+	}
+
+	get dashboard() {
+		return new Dashboard(this.token);
 	}
 
 	get prisioners() {
