@@ -19,6 +19,14 @@ class Prisioners {
 		return request(options);
 	}
 
+	getPrisionersShowDisabled(showDisabled) {
+		const url = `${config.api_url}/prisioners?show_disable=${showDisabled}`;
+		const method = "GET";
+
+		const options = Object.assign({}, this.default_options, { url, method });
+		return request(options);
+	}
+
 	getPrisioner(id) {
 		const url = `${config.api_url}/prisioners/${id}`;
 		const method = "GET";
@@ -38,6 +46,22 @@ class Prisioners {
 	getPrisionerRules(id) {
 		const url = `${config.api_url}/prisioners/${id}/rules`;
 		const method = "GET";
+
+		const options = Object.assign({}, this.default_options, { url, method });
+		return request(options);
+	}
+
+	disablePrisioner(id) {
+		const url = `${config.api_url}/prisioners/${id}/disable`;
+		const method = "PUT";
+
+		const options = Object.assign({}, this.default_options, { url, method });
+		return request(options);
+	}
+
+	enablePrisioner(id) {
+		const url = `${config.api_url}/prisioners/${id}/enable`;
+		const method = "PUT";
 
 		const options = Object.assign({}, this.default_options, { url, method });
 		return request(options);
