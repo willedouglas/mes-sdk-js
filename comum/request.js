@@ -5,13 +5,14 @@ const co = require("co");
 const config = require("../config");
 
 function resultHandler(request_options, result) {
-	if (!result.data) {
+	const notHasData = !result.status;
+	const statusNotIs204 = result.status !== 204;
+	const notHasDataAndStatusNotIs204 = notHasData && statusNotIs204;
+
+	if (notHasDataAndStatusNotIs204) {
 		throw result.statusText;
 	}
-	else if (request_options.url.indexOf("/data/export") !== -1) {
-		return result.data;
-	}
-	else if (!result.status) {
+	else if (notHasData) {
 		throw result.data.message || result;
 	}
 	return result.data;
