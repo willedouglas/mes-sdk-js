@@ -16,7 +16,7 @@ class Reports {
 			${visited_at_start ? `visited_at_start=${visited_at_start}` : ""}
 			${visited_at_end ? `&visited_at_end=${visited_at_end}` : ""}
 			${prisioner_id ? `&prisioner_id=${prisioner_id}` : ""}
-			${visited ? `&visited=${visited}` : ""}`;
+			${visited !== null ? `&visited=${visited}` : ""}`;
 		
 		const method = "GET";
 
