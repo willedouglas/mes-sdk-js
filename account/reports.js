@@ -11,8 +11,13 @@ class Reports {
 		};
 	}
 
-	getPrisionersPeriodVisited(visited_at_start, visited_at_end, visited) {
-		const url = `${config.api_url}/prisioners?show_disable=false&visited_at_start=${visited_at_start}&visited_at_end=${visited_at_end}&visited=${visited}`;
+	getPrisionersPeriodVisited(visited_at_start, visited_at_end, prisioner_id, visited) {
+		const url = `${config.api_url}/prisioners?show_disable=false&
+			${visited_at_start ? `visited_at_start=${visited_at_start}` : ""}
+			${visited_at_end ? `&visited_at_end=${visited_at_end}` : ""}
+			${prisioner_id ? `&prisioner_id=${prisioner_id}` : ""}
+			${visited ? `&visited=${visited}` : ""}`;
+		
 		const method = "GET";
 
 		const options = Object.assign({}, this.default_options, { url, method });
