@@ -15,6 +15,7 @@ const Garrisons = require("./garrisons.js");
 const Zones = require("./zones.js");
 const Users = require("./users.js");
 const Geo = require("./geo.js");
+const Reports = require("./reports.js");
 
 class Account {
 	constructor(token) {
@@ -91,6 +92,10 @@ class Account {
 
 	get geo() {
 		return new Geo(this.token);
+	}
+
+	get reports() {
+		return new Reports(this.token);
 	}
 
 }
